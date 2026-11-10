@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Header</h2>
+
+  <% @tasks.each do |task| %>
+    <div class="container">
+      <% if task.completed? %>
+        <i class="fa-solid fa-square-check"></i>
+      <% else %>
+        <i class="fa-solid fa-square"></i>
+      <% end %>
+      //to make the task into a link
+      <%= link_to task.title, task_path(task)  %>
+
+
+    </div>
+  <% end %>
+  <%= link_to 'create new task',new_task_path, class: 'btn btn-primary mt-2' %>
+</div>
